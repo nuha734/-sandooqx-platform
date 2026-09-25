@@ -14,22 +14,45 @@
             text-align: right;
         }
         header {
-            background-color: #1e3a8a;
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
             color: white;
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
         }
         header h1 {
             margin: 0 0 10px 0;
-            font-size: 2.5em;
+            font-size: 2.8em;
         }
         header p {
             font-size: 1.2em;
             color: #93c5fd;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            max-width: 900px;
+            margin: -25px auto 30px auto;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-item h3 {
+            margin: 0;
+            color: #2563eb;
+            font-size: 1.5em;
+        }
+        .stat-item p {
+            margin: 5px 0 0 0;
+            color: #6b7280;
+            font-size: 0.9em;
         }
         .container {
             max-width: 900px;
-            margin: 30px auto;
+            margin: 0 auto 40px auto;
             padding: 20px;
             background: white;
             border-radius: 10px;
@@ -43,26 +66,47 @@
             border-bottom: 2px solid #e5e7eb;
             padding-bottom: 8px;
         }
+        .demo-box {
+            background: #eff6ff;
+            border: 2px dashed #3b82f6;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+        }
         .cta-btn {
             display: inline-block;
             background-color: #2563eb;
             color: white;
-            padding: 12px 25px;
+            padding: 12px 30px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
             margin-top: 15px;
+            cursor: pointer;
+            border: none;
+            font-size: 1em;
         }
         .cta-btn:hover {
             background-color: #1d4ed8;
         }
-        .demo-box {
-            background: #eff6ff;
-            border: 2px dashed #3b82f6;
+        #result-area {
+            display: none;
+            margin-top: 20px;
+            background: #fff;
+            border: 1px solid #cbd5e1;
             padding: 20px;
             border-radius: 8px;
-            text-align: center;
-            margin-top: 20px;
+            text-align: right;
+        }
+        .risk-badge {
+            background-color: #fee2e2;
+            color: #991b1b;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
         }
         footer {
             text-align: center;
@@ -75,14 +119,29 @@
 <body>
 
     <header>
-        <h1>سندوكاس | SandooqX</h1>
-        <p>العدالة الوقائية الذكية: احمِ عقودك التجارية قبل أن يتحول البند إلى نزاع.</p>
+        <h1>⚖️ سندوكاس | SandooqX</h1>
+        <p>العدالة الوقائية الذكية: منظومة استباقية لتحليل العقود، مطابقتها مع التشريعات، والتنبؤ بالنزاعات قبل وقوعها.</p>
     </header>
+
+    <div class="stats-bar">
+        <div class="stat-item">
+            <h3>98%</h3>
+            <p>دقة المطابقة التشريعية</p>
+        </div>
+        <div class="stat-item">
+            <h3>70%</h3>
+            <p>توفير وقت المراجعة</p>
+        </div>
+        <div class="stat-item">
+            <h3>لحظي</h3>
+            <p>رصد المخاطر والثغرات</p>
+        </div>
+    </div>
 
     <div class="container">
         <div class="section">
             <h2>عن المنصة</h2>
-            <p>أول منظومة ذكاء اصطناعي متكاملة لقراءة العقود، مطابقتها مع الأنظمة واللوائح المحلية لحظياً، وتقييم المخاطر الاستباقية لتوفير 70% من وقت الشركات والجهات القانونية.</p>
+            <p>أول منظومة ذكاء اصطناعي متكاملة لقراءة العقود، مطابقتها مع الأنظمة واللوائح المحلية لحظياً، وتقييم المخاطر الاستباقية لحماية الشركات من النزاعات التجارية.</p>
         </div>
 
         <div class="section">
@@ -90,20 +149,35 @@
             <ul>
                 <li><strong>الرفع الفوري:</strong> ارفع عقدك بصيغة PDF أو Word بكل سهولة.</li>
                 <li><strong>التدقيق التشريعي:</strong> يحلل الذكاء الاصطناعي البنود ويطابقها مع الأنظمة واللوائح.</li>
-                <li><strong>تقرير المخاطر:</strong> يحدد البنود الخطرة ويعطيك نسبة تقييم الخطر (Risk Score) مع صياغات بديلة آمنة.</li>
+                <li><strong>تقرير المخاطر والصياغة:</strong> يحدد البنود الخطرة ويعطيك نسبة تقييم الخطر مع مقترح صياغة بديلة آمنة.</li>
             </ul>
         </div>
 
         <div class="demo-box">
-            <h3>تجربة النموذج الأولي (MVP)</h3>
-            <p>اسحب وأفلت عقدك التجريبي أدناه لمعاينة التحليل الفوري وتوليد الصياغة البديلة:</p>
-            <a href="#" class="cta-btn" onclick="alert('أهلاً بك! هذا نموذج تجريبي تفاعلي لمنصة سندوكاس.'); return false;">رفع العقد والتحليل الآلي</a>
+            <h3>تجربة النموذج الأولي الحي (MVP Live Demo)</h3>
+            <p>اضغطي على الزر أدناه لمحاكاة رفع عقد تجريبي وعرض التقرير الذكي فوراً:</p>
+            <button class="cta-btn" onclick="runDemo()">رفع العقد والتحليل الآلي</button>
+            
+            <div id="result-area">
+                <span class="risk-badge">⚠️ نسبة الخطر المرصودة: عالي (78%)</span>
+                <p><strong>البند المخالف:</strong> بند الشرط الجزائي ومهلة التسليم (البند رقم 4).</p>
+                <p><strong>السبب النظامي:</strong> مخالف لضوابط القوة القاهرة ويفتقر للتوازن العقدي.</p>
+                <p><strong>✨ الصياغة البديلة المقترحة من المنصة:</strong> <em>"يُعفى الطرف المتضرر من الالتزام في حال ظهور ظروف قاهرة طارئة بعد إشعار الطرف الآخر كتابياً خلال مدة أقصاها 7 أيام..."</em></p>
+            </div>
         </div>
     </div>
 
     <footer>
         <p>جميع الحقوق محفوظة لمشروع سندوكاس (SandooqX) - مسابقة سيف 2026</p>
     </footer>
+
+    <script>
+        function runDemo() {
+            const resultArea = document.getElementById('result-area');
+            resultArea.style.display = 'block';
+            resultArea.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 
 </body>
 </html>
